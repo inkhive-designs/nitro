@@ -1,0 +1,45 @@
+.nitro-grid {
+  .transition(0.2s all ease);
+  border-bottom: none;
+  .featured-thumb {
+    border-top: none;
+    position: relative;
+    .postedon {
+      position: absolute;
+      top: 0;
+      font-size: 13px;
+      background: @s-accent;
+      opacity: 1;
+      padding: 5px;
+      color: white;
+      a { color: white; }
+      .fa {
+        margin-right: 3px;
+        position: relative;
+        top: -1px;
+      }
+    }
+  }
+  .out-thumb {
+    position: absolute;
+    bottom: 0;
+    display: block;
+    padding: 0;
+    width: 100%;
+    h1 {
+      padding: 8px 8px;
+      margin-top: 0;
+      width: 100%;
+      text-align: center;
+      margin: 0;
+      font-size: 14px;
+      background: fade(@accent,90%);
+      font-weight: bold;
+      a { color: @onaccent; }
+    }
+
+  }
+  &:hover {
+    .transform(scale(1.02));
+  }
+}

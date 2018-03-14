@@ -1,0 +1,183 @@
+#top-bar {
+  padding: 8px 0px;
+  background: darken(@s-accent, 5%);
+  @media screen and (max-width: 767px) {
+  }
+  .container {
+    @media screen and (max-width: 991px) {
+      text-align: center;
+    }
+    padding: 0;
+  }
+  .social-icons {
+    float: left;
+    display: inline-block;
+    @media screen and (max-width: 991px) {
+      float: left;
+      margin-left: 5px;
+
+    }
+
+  }
+  .social-icons a {
+    background: @accent;
+    padding: 3px 7px;
+    padding-top: 5px;
+    color: @onaccent;
+    float: none;
+    margin-right: 1px;
+    .transition( ease 0.4s );
+    display: inline-block;
+    min-width: 32px;
+    text-align: center;
+    border-radius: 5px;
+    border: dashed 1px @accent;
+    &:last-child {
+      margin-right: 0;
+    }
+    @media screen and (max-width: 767px) {
+      float: left;
+      margin-right: 2px;
+    }
+    &:hover {
+      background: darken(@onaccent, 10%);
+      color: @accent;
+      .transform(rotate(360deg));
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .td_mobile_menu_wrap {
+      min-height: 42px;
+      padding: 10px;
+      margin-bottom: 0px;
+      position: relative;
+      display: inline-block;
+      &:after {
+        content: "\f103";
+        font-family: "FontAwesome";
+        color: darken(@onaccent,8%);
+        position: absolute;
+        right: 17px;
+        top: 15px;
+        font-size: 18px;
+      }
+    }
+    .mobileMenu {
+      padding: 5px 8px;
+      border: none;
+      box-shadow: none;
+      background: darken(@s-accent,10%);
+      border: solid 1px darken(@s-accent,20%);
+      color: darken(@onaccent,8%);
+      background-image: none;
+      -webkit-appearance: none;
+      position: relative;
+      min-width: 155px;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+
+  #woocommerce-zone {
+    float: right;
+    padding: 0px 2px;
+    #userlinks {
+      display: inline-block;
+      float: right;
+      text-transform: none;
+      position: relative;
+      margin-right: 50px;
+      margin-left: -5px;
+      a {
+        position: relative;
+        display: inline-block;
+        color: @accent;
+        background: darken(white,5%);
+        border: 2px dashed darken(white,5%);
+        padding: 4px 12px;
+        border-radius: 13px;
+        font-size: 13px;
+        &:hover {
+          border-color: @accent;
+        }
+      }
+    }
+
+
+    #top-cart {
+      display: inline-block;
+      float: right;
+      position: relative;
+      margin-left: 5px;
+      i {
+        display: inline-block;
+        .transition(0.4s all ease);
+        background: darken(white,5%);
+        border: 2px dashed darken(white,5%);
+        padding: 6px 12px;
+        padding-bottom: 7px;
+        border-radius: 13px;
+        font-size: 13px;
+        cursor: pointer;
+        &:hover {
+          border-color: @accent;
+        }
+      }
+      .cart-contents {
+        position: absolute;
+        right: 0;
+        top: 38px;
+        background: fade(white,90%);
+        border: dashed 2px @accent;
+        margin-left: 10px;
+        border-radius: 5px;
+        font-size: 14px;
+        z-index: 120;
+        padding: 20px;
+        width: 185px;
+        opacity: 0;
+        .transition(0.4s all ease);
+        visibility: hidden;
+        .total {
+          margin-bottom: 10px;
+        }
+        .total, .count {
+          text-align: right;
+        }
+        .total .amount {
+          color: @accent;
+          font-weight: bold;
+          font-size: 16px;
+          margin-bottom: 10px;
+        }
+        a.links {
+          display: inline-block;
+          font-size: 13px;
+          margin-left: 10px;
+          float: right;
+          text-align:right;
+          text-decoration: underline;
+        }
+      }
+      .top-cart-icon {
+        position: absolute;
+        margin-left: 7px;
+        height: 50px;
+        left: -50px;
+      }
+      .top-cart-icon:hover {
+        .cart-contents {
+          display: block;
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+      a {
+        color: @content;
+      }
+    }
+
+  }
+}

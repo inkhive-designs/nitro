@@ -1,0 +1,83 @@
+#header-image {
+  position: relative;
+  border-bottom: solid 5px darken(@s-accent,5%);
+  box-shadow: inset 0px -39px 0px black;
+  overflow: hidden;
+
+  .image {
+    position: relative;
+    opacity: 1;
+    -webkit-filter: brightness(0.9);
+    filter: brightness(0.9);
+    transform-origin: center;
+    .transition(4s all ease);
+  }
+  .header-data {
+    position: absolute;
+    bottom: 65%;
+    @media screen and (max-width: 767px) {
+      bottom:55%;
+    }
+    text-align: center;
+    width: 100%;
+    .transform(translateY(50%));
+    .header-title {
+      font-size: 36px;
+      @media screen and (max-width: 767px) {
+        font-size: 18px;
+      }
+      font-weight: bold;
+      color: white;
+      text-shadow: 1px 1px 0px @s-accent,-1px -1px 0px fade(@accent,20%);
+    }
+    .description {
+      font-size: 17px;
+      @media screen and (max-width: 767px) {
+        font-size: 13px;
+      }
+      color: white;
+      text-shadow: 0px 0px 1px #444;
+      max-width: 50%;
+      margin-left: 25%;
+      text-align: center;
+    }
+    .buttons {
+      text-align: center;
+      margin-top: 10px;
+      .button1, .button2 {
+        display: inline-block;
+        a {
+          padding: 10px;
+          @media screen and (max-width: 767px) {
+            padding: 4px;
+            font-size: 12px;
+          }
+          border: dashed 2px transparent;
+          display: inline-block;
+          border-radius: 5px;
+          color: @onaccent;
+          .transition(0.4s all ease);
+          &:hover {
+            border-color: white;
+          }
+        }
+      }
+      .button1 a {
+        background: fade(@accent,80%);
+
+      }
+      .button2 a {
+        background: fade(darken(@s-accent,5%),80%);
+
+      }
+
+    }
+  }
+  &:hover {
+    .image {
+      .transform(scale(1.1));
+      -webkit-filter: brightness(0.8);
+      filter: brightness(0.8);
+    }
+  }
+}

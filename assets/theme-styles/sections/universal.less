@@ -1,0 +1,127 @@
+.body-font {
+  font-family: "Open Sans", sans-serif;
+}
+.title-font {
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  .body-font;
+  background: @background;
+  word-wrap: break-word;
+  @media screen and (max-width: 767px) {
+    overflow-x: hidden;
+  }
+}
+.mega-container {
+  background: @background;
+  max-width: 1170px;
+  margin: auto;
+  margin-top: 20px;
+  overflow: visible;
+}
+
+a {
+  color: @accent;
+  cursor: pointer;
+  &:hover {
+    text-decoration: none;
+    color: @accent;
+  }
+}
+.container {
+  margin: auto;
+}
+.panel {
+  background: none;
+}
+
+.gradient-pattern {
+  width: 100%;
+  height: auto;
+  border: none;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  @gradient-color: fade(#ddd,80%);
+  background: linear-gradient(45deg, @gradient-color 0, @gradient-color 25%, rgba(0,0,0,0) 25%, rgba(0,0,0,0) 75%, @gradient-color 75%, @gradient-color 100%), linear-gradient(45deg, @gradient-color 25%, rgba(0,0,0,0) 25%, rgba(0,0,0,0) 75%, @gradient-color 75%, @gradient-color 0), #f7f7f7;
+
+  background-position: 0 0, 5px 5px;
+  -webkit-background-origin: padding-box;
+  background-origin: padding-box;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-background-size: 10px 10px;
+  background-size: 10px 10px;
+}
+
+/* section titles */
+.section-title {
+  font-weight: bolder;
+  text-transform: uppercase;
+  color: @content;
+  text-shadow: 1px 1px 1px @s-accent;
+  font-size: 24px;
+  margin-bottom: 42px;
+  text-align: center;
+  @media screen and (max-width: 991px) {
+    margin-top: 20px;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    left: ~"calc(50% - 20px)";
+    display: block;
+    width: 40px;
+    height: 5px;
+    margin-top: 8px;
+    margin-bottom: 10px;
+    background: darken(@accent,1%);
+  }
+}
+#content {
+  margin-top: 30px;
+}
+
+#infinite-handle {
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  width: 100%;
+  clear: both;
+  span { background: fade(black, 0%); }
+  span button, span button:hover {
+    background: darken(@background,10%);
+    box-shadow: none;
+    font-size: 15px;
+    font-weight: 300;
+    color: black;
+    text-shadow: none;
+    border-radius: 0px;
+    border-bottom: solid 2px darken(@background,20%);
+    padding: 5px 10px;
+    outline: none;
+  }
+}
+/* infinite Loader */
+span.infinite-loader .spinner {
+  left: 50% !important;
+}
+.infinity-end.neverending #main {
+  margin-bottom: 100px;
+}
+
+/*Image title styles*/
+.image_title {
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 640px;
+
+}
+.image_title a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 20px;
+  font-size: 16px;
+}

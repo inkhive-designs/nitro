@@ -1,0 +1,108 @@
+/* ---------- Header ------------- */
+#masthead {
+  text-align: left;
+  background: @background;
+  color: @content;
+  border-bottom: solid 2px @s-accent;
+  border-top: dashed 2px @s-accent;
+  box-shadow: 0px 3px 5px fade(black,30%);
+  z-index: 103;
+  position: relative;
+  #text-title-desc {
+    clear: none;
+    float: left;
+    @media screen and (max-width: 991px) {
+      float: none;
+    }
+    @media screen and (max-width: 768px) {
+      float: none;
+    }
+    vertical-align: middle;
+  }
+
+  h1.site-title {
+    font-size: 30px;
+    margin-bottom: 5px;
+    @media screen and (max-width: 600px) {
+      font-size: 26px;
+    }
+    font-weight: bold;
+    margin-top: 0px;
+    padding: 0 5px;
+    text-shadow: 1px 1px 0 white, 2px 2px 0 fade(@accent,60%);
+    a {
+      color: @content;
+    }
+  }
+  h2.site-description {
+    font-weight: 300;
+    font-size: 15px;
+    margin-top: 0px;
+    padding: 0 5px;
+    color: @content;
+    text-shadow: 1px 1px 0 white, 2px 2px 0 fade(@accent,60%);
+  }
+  .masthead-container {
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-bottom: 0px;
+
+  }
+  #searchicon {
+    float: right;
+    padding: 10px 0px;
+    font-size: 22px;
+    position: relative;
+    overflow: visible;
+    top: 4px;
+    text-shadow: 1px 1px 1px fade(@accent,80%);
+    cursor: pointer;
+    .transition(0.2s all ease);
+    &:hover {
+      .transform(scale(1.2));
+      transform-origin: center;
+    }
+    @media screen and (max-width: 767px) {
+      position: absolute;
+      right: 10px;
+    }
+  }
+}
+.site-branding {
+  padding: 0px 0;
+  padding-top: 14px;
+  position: relative;
+  top: 0px;
+  overflow: hidden;
+  display: inline-block;
+  float: left;
+  @media screen and (max-width: 991px) {
+    float: none;
+    text-align: center;
+  }
+  @media screen and (max-width: 767px) {
+    padding: 14px 0;
+    width: 100%;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 991px) {
+  .masthead-container {
+    text-align: center;
+  }
+}
+
+#site-logo {
+  display: inline-block;
+  float: left;
+  width: 150px;
+  height: auto;
+  margin-bottom: 10px;
+  overflow: hidden;
+  img {
+    max-height: 70px;
+  }
+  @media screen and (max-width: 991px) {
+    float: none;
+  }
+}

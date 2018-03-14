@@ -7,28 +7,28 @@
  </div><!--.mega-container-->
  <?php if ( is_active_sidebar('footer-1') || is_active_sidebar('footer-2') || is_active_sidebar('footer-3') ) : ?>
 	 <div id="footer-sidebar" class="widget-area">
-	 	<div class="container">
+	 	<div class="container flex-wrapper">
 		 	<?php 
 				if ( is_active_sidebar( 'footer-1' ) ) : ?>
-					<div class="footer-column col-md-3 col-sm-6"> 
+					<div class="footer-column col-md-3 col-sm- col-xs-12">
 						<?php dynamic_sidebar( 'footer-1'); ?> 
 					</div> 
 				<?php endif;
 					
 				if ( is_active_sidebar( 'footer-2' ) ) : ?>
-					<div class="footer-column col-md-3 col-sm-6"> 
+					<div class="footer-column col-md-3 col-sm-6 col-xs-12">
 						<?php dynamic_sidebar( 'footer-2'); ?> 
 					</div> 
 				<?php endif;
 		
 				if ( is_active_sidebar( 'footer-3' ) ) : ?>
-					<div class="footer-column col-md-3 col-sm-6"> <?php
+					<div class="footer-column col-md-3 col-sm-6 col-xs-12"> <?php
 						dynamic_sidebar( 'footer-3'); ?> 
 					</div>
 				<?php endif; 
 				
 				if ( is_active_sidebar( 'footer-4' ) ) : ?>
-					<div class="footer-column col-md-3 col-sm-6"> <?php
+					<div class="footer-column col-md-3 col-sm-6 col-xs-12"> <?php
 						dynamic_sidebar( 'footer-4'); ?> 
 					</div>
 				<?php endif; ?>

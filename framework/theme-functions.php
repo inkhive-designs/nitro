@@ -3,144 +3,20 @@
  * @package nitro, Copyright Rohit Tripathi, rohitink.com
  * This file contains Custom Theme Related Functions.
  */
- 
- 
-class Nitro_Menu_With_Description extends Walker_Nav_Menu {
-	function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
-		global $wp_query;
-		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
-		
-		$class_names = $value = '';
 
-		$classes = empty( $item->classes ) ? array() : (array) $item->classes;
-
-		$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
-		$class_names = ' class="' . esc_attr( $class_names ) . '"';
-
-		$output .= $indent . '<li id="menu-item-'. $item->ID . '"' . $value . $class_names .'>';
-
-		$fontIcon = ! empty( $item->attr_title ) ? ' <i class="fa ' . esc_attr( $item->attr_title ) .'">' : '';
-		$attributes = ! empty( $item->target ) ? ' target="' . esc_attr( $item->target ) .'"' : '';
-		$attributes .= ! empty( $item->xfn ) ? ' rel="' . esc_attr( $item->xfn ) .'"' : '';
-		$attributes .= ! empty( $item->url ) ? ' href="' . esc_url( $item->url ) .'"' : '';
-
-		$item_output = $args->before;
-		$item_output .= '<a'. $attributes .'>'.$fontIcon.'</i>';
-		$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
-		$item_output .= '<br /><span class="menu-desc">' . $item->description . '</span>';
-		$item_output .= '</a>';
-		$item_output .= $args->after;
-
-		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args, $id );
-	}
-}
-
-class Nitro_Menu_With_Icon extends Walker_Nav_Menu {
-	function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
-		global $wp_query;
-		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
-		
-		$class_names = $value = '';
-
-		$classes = empty( $item->classes ) ? array() : (array) $item->classes;
-
-		$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
-		$class_names = ' class="' . esc_attr( $class_names ) . '"';
-
-		$output .= $indent . '<li id="menu-item-'. $item->ID . '"' . $value . $class_names .'>';
-
-		$fontIcon = ! empty( $item->attr_title ) ? ' <i class="fa ' . esc_attr( $item->attr_title ) .'">' : '';
-		$attributes = ! empty( $item->target ) ? ' target="' . esc_attr( $item->target ) .'"' : '';
-		$attributes .= ! empty( $item->xfn ) ? ' rel="' . esc_attr( $item->xfn ) .'"' : '';
-		$attributes .= ! empty( $item->url ) ? ' href="' . esc_url( $item->url ) .'"' : '';
-
-		$item_output = $args->before;
-		$item_output .= '<a'. $attributes .'>'.$fontIcon.'</i>';
-		$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
-		$item_output .= '</a>';
-		$item_output .= $args->after;
-
-		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args, $id );
-	}
-}
+//Import Admin Modules
+require get_template_directory() . '/framework/admin-modules/admin_styles.php';
+require get_template_directory() . '/framework/admin-modules/register_styles.php';
+require get_template_directory() . '/framework/admin-modules/theme_setup.php';
+require get_template_directory() . '/framework/admin-modules/register_widgets.php';
+require get_template_directory() . '/framework/admin-modules/logo_compatibility.php';
+require get_template_directory() . '/framework/admin-modules/nav_walkers.php';
 
 /*
  * Pagination Function. Implements core paginate_links function.
  */
 function nitro_pagination() {
 	the_posts_pagination(array('mid_size'=> 2));
-}
-
-/*
-** Customizer Controls 
-*/
-if (class_exists('WP_Customize_Control')) {
-	class Nitro_WP_Customize_Category_Control extends WP_Customize_Control {
-        /**
-         * Render the control's content.
-         */
-        public function render_content() {
-            $dropdown = wp_dropdown_categories(
-                array(
-                    'name'              => '_customize-dropdown-categories-' . $this->id,
-                    'echo'              => 0,
-                    'show_option_none'  => __( '&mdash; Select &mdash;', 'nitro' ),
-                    'option_none_value' => '0',
-                    'selected'          => $this->value(),
-                )
-            );
- 
-            $dropdown = str_replace( '<select', '<select ' . $this->get_link(), $dropdown );
- 
-            printf(
-                '<label class="customize-control-select"><span class="customize-control-title">%s</span> %s</label>',
-                $this->label,
-                $dropdown
-            );
-        }
-    }
-} 
-
-if ( class_exists('WP_Customize_Control') && class_exists('woocommerce') ) {
-	class Nitro_WP_Customize_Product_Category_Control extends WP_Customize_Control {
-        /**
-         * Render the control's content.
-         */
-        public function render_content() {
-            $dropdown = wp_dropdown_categories(
-                array(
-                    'name'              => '_customize-dropdown-categories-' . $this->id,
-                    'echo'              => 0,
-                    'show_option_none'  => __( '&mdash; Select &mdash;', 'nitro' ),
-                    'option_none_value' => '0',
-                    'taxonomy'          => 'product_cat',
-                    'selected'          => $this->value(),
-                )
-            );
- 
-            $dropdown = str_replace( '<select', '<select ' . $this->get_link(), $dropdown );
- 
-            printf(
-                '<label class="customize-control-select"><span class="customize-control-title">%s</span> %s</label>',
-                $this->label,
-                $dropdown
-            );
-        }
-    }
-}    
-if (class_exists('WP_Customize_Control')) {
-	class Nitro_WP_Customize_Upgrade_Control extends WP_Customize_Control {
-        /**
-         * Render the control's content.
-         */
-        public function render_content() {
-             printf(
-                '<label class="customize-control-upgrade"><span class="customize-control-title">%s</span> %s</label>',
-                $this->label,
-                $this->description
-            );
-        }
-    }
 }
 
 /*
