@@ -20,11 +20,11 @@ function nitro_custom_css_mods() {
 	endif;	
 	
 	if ( get_theme_mod('nitro_title_font') ) :
-		echo ".title-font, h1, h2, .section-title, .woocommerce ul.products li.product h3 { font-family: ".esc_html( get_theme_mod('nitro_title_font','Open Sans') )."; }";
+		echo ".title-font, h1, h2, .section-title, .woocommerce ul.products li.product h3 { font-family: '".esc_html( get_theme_mod('nitro_title_font','Open Sans') )."'; }";
 	endif;
 	
 	if ( get_theme_mod('nitro_body_font') ) :
-		echo "body { font-family: ".esc_html( get_theme_mod('nitro_body_font','Open Sans') )."; }";
+		echo "body { font-family: '".esc_html( get_theme_mod('nitro_body_font','Open Sans') )."'; }";
 	endif;
 	
 	if ( get_theme_mod('nitro_site_titlecolor') ) :

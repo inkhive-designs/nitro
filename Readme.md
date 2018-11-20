@@ -3,7 +3,7 @@
 **Contributors:** (inkhive)  
 **Requires at least:** WordPress 4.4  
 **Tested up to:** WordPress 4.9
-**Version:** 1.0.1
+**Version:** 1.0.2
 **License:** GPL v3  
 **License URI:** http://www.gnu.org/licenses/gpl-3.0.html  
 **Tags:** custom-background, two-columns, one-column, custom-colors, flexible-header, theme-options, right-sidebar, grid-layout, custom-menu, threaded-comments, translation-ready, featured-images, blog, full-width-template, e-commerce, footer-widgets, entertainment, photography, featured-image-header
@@ -116,3 +116,9 @@ Source: https://pixabay.com/en/service/terms/#usage
 ### Version 1.0.1
 
 * Bugs Free
+
+### Version 1.0.2
+
+* Guttenberg Ready
+* Social Icon Bugs Resolved
+* Slabo Font Issue Fixed

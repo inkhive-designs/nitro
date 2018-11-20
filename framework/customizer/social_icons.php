@@ -14,7 +14,7 @@ function nitro_customize_register_social($wp_customize) {
         'google-plus' => __('Google Plus', 'nitro'),
         'instagram' => __('Instagram', 'nitro'),
         'rss' => __('RSS Feeds', 'nitro'),
-        'vine' => __('Vine', 'nitro'),
+        'pinterest-p' => __('Pinterest', 'nitro'),
         'vimeo-square' => __('Vimeo', 'nitro'),
         'youtube' => __('Youtube', 'nitro'),
         'flickr' => __('Flickr', 'nitro'),
@@ -62,7 +62,7 @@ function nitro_customize_register_social($wp_customize) {
             'google-plus',
             'instagram',
             'rss',
-            'vine',
+            'pinterest-p',
             'vimeo-square',
             'youtube',
             'flickr'

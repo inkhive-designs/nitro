@@ -6,12 +6,11 @@ function nitro_customize_register_gfonts($wp_customize) {
         array(
             'title'     => __('Google Web Fonts','nitro'),
             'priority'  => 41,
-            'description' => __('Defaults: Open Sans.','nitro'),
             'panel'     => 'nitro_design_panel'
         )
     );
 
-    $font_array = array('Open Sans','Droid Sans','Droid Serif','Roboto','Roboto Condensed','Lato','Bree Serif','Oswald','Slabo','Lora','Source Sans Pro','PT Sans','Ubuntu','Lobster','Arimo','Bitter','Noto Sans');
+    $font_array = array('Open Sans','Droid Sans','Droid Serif','Roboto','Roboto Condensed','Lato','Bree Serif','Oswald','Slabo 27px','Lora','Source Sans Pro','PT Sans','Ubuntu','Lobster','Arimo','Bitter','Noto Sans');
     $fonts = array_combine($font_array, $font_array);
 
     $wp_customize->add_setting(
@@ -23,7 +22,7 @@ function nitro_customize_register_gfonts($wp_customize) {
     );
 
     function nitro_sanitize_gfont( $input ) {
-        if ( in_array($input, array('Open Sans','Droid Sans','Droid Serif','Roboto','Roboto Condensed','Lato','Bree Serif','Oswald','Slabo','Lora','Source Sans Pro','PT Sans','Ubuntu','Lobster','Arimo','Bitter','Noto Sans') ) )
+        if ( in_array($input, array('Open Sans','Droid Sans','Droid Serif','Roboto','Roboto Condensed','Lato','Bree Serif','Oswald','Slabo 27px','Lora','Source Sans Pro','PT Sans','Ubuntu','Lobster','Arimo','Bitter','Noto Sans') ) )
             return $input;
         else
             return '';
